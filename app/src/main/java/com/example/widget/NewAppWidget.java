@@ -41,7 +41,7 @@ public class NewAppWidget extends AppWidgetProvider {
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context,appWidgetId,intent,
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-
+        views.setOnClickPendingIntent(R.id.button_update, pendingIntent);
         SharedPreferences.Editor prefEditor = prefs.edit();
         prefEditor.putInt(COUNT_KEY+appWidgetId, count);
         prefEditor.apply();
